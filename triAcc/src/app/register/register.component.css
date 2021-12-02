@@ -14,8 +14,8 @@ body {
 }
 
 img {
-  width: 250px;
-  height: 250px;
+  width: 170px;
+  height: 170px;
   margin-bottom: 50px;
 }
 
@@ -57,7 +57,7 @@ img {
 .form .user-input:hover,
 .form .user-input:focus,
 .form .user-input:active {
-  box-shadow: 0 0 20px rgba(66, 133, 244, 0.8);
+  box-shadow: 0 0 20px #219150;
 }
 
 .form .btn {
@@ -65,7 +65,7 @@ img {
   border: none;
   width: 320px;
   height: 55px;
-  background: #4285f4;
+  background: #219150;
   color: #fff;
   font-size: 18px;
   letter-spacing: 1px;
@@ -76,7 +76,7 @@ img {
 }
 
 .form .btn:hover {
-  box-shadow: 0 0 20px rgba(66, 133, 244, 0.8);
+  box-shadow: 0 0 20px #219150;
 }
 
 .form .options-02 {
@@ -86,7 +86,7 @@ img {
 }
 
 .form .options-02 a {
-  color: #4285f4;
+  color: #219150;
 }
 
 /* Responsive CSS */
