@@ -1,0 +1,174 @@
+<header class="header">
+
+  <a href="#" class="logo"> <img src="assets/images/logoverde.png" class="logoo" alt=""> TripAcc </a>
+
+
+  <nav class="navbar" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <div id="nav-close" class="fas fa-times"></div>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#" class="btn" routerLink="/login">Login</a>
+  </nav>
+
+  <div class="icons">
+      <div id="menu-btn" class="fas fa-bars"></div>
+  </div>
+
+</header>
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+  <div class="swiper home-slider" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+
+          <div class="swiper-slide">
+              <div class="box" style="background: url(assets/images/home-bg-1.jpg) no-repeat;">
+                  <div class="content">
+                      <span>Organize e divida as suas</span>
+                      <h3>Despesas</h3>
+                      <p>com a TripAcc torne simples a partilha de despesas para viagens, atividades e para a vida diária.</p>
+                      <a href="#" class="btn"routerLink="/register">Get Started</a>
+                  </div>
+              </div>
+          </div>
+  </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- category section starts  -->
+
+<section class="category">
+
+  <h1 class="heading">TripAcc funciona</h1>
+
+  <div class="box-container">
+
+      <div class="box">
+          <img src="assets/images/casal.jpeg" alt="">
+          <h3>Para Casais</h3>
+          <p>Mantenha o seu relacionamento justo e financeiramente transparente. Controle as despesas comuns com o seu parceiro e divida-as uniformemente através da TripAcc.</p>   
+      </div>
+
+      <div class="box">
+          <img src="assets/images/viajantes.jpg" alt="">
+          <h3>Para Viajantes</h3>
+          <p>Esteja numa empolgante escapadela em família ou numa viagem espontânea à cidade com amigos, TripAcc faz os cálculos para você poder relaxar e desfrutar das suas viagens.</p>
+      </div>
+
+      <div class="box">
+          <img src="assets/images/colega.jpg" alt="">
+          <h3>Para Colegas de Quarto</h3>
+          <p>Tricount divide as contas domésticas e despesas diárias entre companheiros de quarto para tornar a vida fácil, honesta e justa.</p>
+      </div>
+  </div>
+
+</section>
+
+<!-- category section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+  <div class="image">
+      <img src="assets/images/trip.jpg" alt="">
+  </div>
+
+  <div class="content">
+      <h3>O que é a TripAcc?   </h3>
+      <p>TripAcc é uma aplicação onde se criam listas partilhadas de transações que permitem equilibrar as suas despesas no seio de um grupo de amigos e não só, por exemplo, num evento comum, férias, alojamento partilhado.</p>
+  </div>
+
+</section>
+
+<!-- reviews section starts  -->
+
+<section class="reviews" id="reviews">
+
+  <h1 class="heading">Reviews</h1>
+
+  <div class="swiper review-slider">
+
+      <div class="swiper-wrapper">
+
+          <div class="swiper-slide slide">
+            <div class="user">
+              <img src="assets/images/joao.jfif" alt="">
+              <div class="info">
+                  <h3>Marco Oliveira</h3>
+                  <span>Escritor</span>
+              </div>
+          </div>
+              <p class="text">Fantástico para gerir despesas partilhadas com amigos ou familiares. Utilizo-a para despesas partilhadas com o meu parceiro. Esta aplicação é essencial para mim.</p> 
+          </div>
+
+          <div class="swiper-slide slide">
+            <div class="user">
+              <img src="assets/images/xiong.jfif" alt="">
+              <div class="info">
+                  <h3>João Luis</h3>
+                  <span>Web Developer</span>
+              </div>
+          </div>
+              <p class="text">Aplicativo super conveniente para gerenciar contas com amigos, companheiros de viagem, etc. Super conveniente para poder ver contagens em múltiplos dispositivos (mesmo no desktop, mesmo que não seja imediato). Recomendado! Parabéns aos programadores ;-)</p>  
+          </div>
+
+          
+          <div class="swiper-slide slide">
+            <div class="user">
+              <img src="assets/images/carmo.jpg" alt="">
+              <div class="info">
+                  <h3>Carmo Esteves</h3>
+                  <span>Consultora</span>
+              </div>
+          </div>
+              <p class="text">Este aplicativo é tão intuitivo e fácil de usar para grandes despesas de grupo. As entradas demoraram apenas alguns segundos:) Obrigado por fazê-lo! </p>
+          </div>
+      </div>
+
+  </div>
+
+</section>
+
+<!-- reviews section ends -->
+
+<!-- footer section starts  -->
+<section class="footer">
+<!-- Footer -->
+
+
+  <div class="box-container">
+
+      <div class="box">
+          <h3 style="color:#219150">Quick Links</h3>
+          <a href="#home">home</a>
+          <a href="#about">about</a>
+          <a href="#reviews">reviews</a>
+          <a href="#">terms of use</a>
+          <a href="#">privacy policy</a>
+      </div>
+
+      <div class="box">
+          <h3 style="color:#219150" >Contact Info</h3>
+          <a href="#"> <i class="fas fa-phone"></i> 913 152 677 </a>
+          <a href="#"> <i class="fas fa-envelope"></i> a20609@alunos.ipca.pt </a>
+          <a href="#"> <i class="fas fa-map"></i> Vale de São Cosme </a>
+      </div>
+
+      <div class="box">
+          <h3 style="color:#219150">Follow Us</h3>
+          <a href="#"> <fa-icon [icon]="faCoffee"></fa-icon> Facebook </a>
+          <a href="#"> <i class="fab fa-twitter"></i> Twitter </a>
+          <a href="#"> <i class="fab fa-instagram"></i> Instagram </a>
+          <a href="#"> <i class="fab fa-linkedin"></i> Linkedin </a>
+          <a href="#"> <i class="fab fa-github"></i> Github </a>
+      </div>
+
+  </div>
+
+  <div class="credit">created by <span>mr. web designer</span> | all rights reserved!</div>
+</section>
