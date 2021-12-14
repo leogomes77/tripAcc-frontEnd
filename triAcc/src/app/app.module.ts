@@ -10,6 +10,10 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { GroupComponent } from './group/group.component';
+import { UserComponent } from './user/user.component';
+import { GroupCreateComponent } from './group-create/group-create.component';
 
 
 @NgModule({
@@ -17,7 +21,11 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    DashboardComponent,
+    GroupComponent,
+    UserComponent,
+    GroupCreateComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,181 @@
+<!-- adicionar  dark-mode na class abaixo para ficar dark mode -->
+<body class={{darkClass}}>
+  <div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a  target="_blank" class="nav-link">Website</a>
+        </li>
+      </ul>
+
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+
+        <!-- Expand menu -->
+        <li class="nav-item">
+          <a class="nav-link" data-widget="fullscreen" role="button">
+            <i class="fas fa-expand-arrows-alt"></i>
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a routerLink="/dashboard" class="brand-link">
+        <img src="assets/images/logobranco.png" alt="TripAcc Logo" class="brand-image" style="opacity: .5">
+        <span class="brand-text font-weight-light">TripAcc</span>
+      </a>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+                 with font-awesome or any other icon font library -->
+
+            <!-- Dashboard -->
+            <li class="nav-item">
+              <a routerLink="/dashboard" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Dashboard
+                </p>
+              </a>
+            </li>
+
+            <!-- Groups (onde tem active e class para selecionar o local atual)-->
+            <li class="nav-item menu-open">
+              <a routerLink="/group" class="nav-link active">
+                <i class="nav-icon fas fa-users"></i>
+                <p>
+                  Grupos
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a routerLink="/groupCreate" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Criar Novo</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- User -->
+            <li class="nav-item">
+              <a routerLink="/user" class="nav-link">
+                <i class="nav-icon fas fa-user"></i>
+                <p>
+                  Utilizador
+                </p>
+              </a>
+            </li>
+
+            <!-- Logout -->
+            <li class="nav-item">
+              <a href="/" class="nav-link">
+                <i class="nav-icon fas fa-power-off"></i>
+                <p>
+                  LogOut
+                </p>
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 98vh;">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Novo Grupo</h1>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+
+          <br>
+            <div class="row mb-2">
+              <div class="col-sm-12">
+                <div class="card card-primary">
+                  <div class="card-header">
+                    <h3 class="card-title">Dados Grupo</h3>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Nome">
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Descrição">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <select class="form-control">
+                            <option value="" disabled selected>Moeda</option>
+                            <option value="Euro">Euro</option>
+                            <option value="Dollar">Dollar</option>
+                            <option value="Libra">Libra</option>
+                            <option value="Real">Real</option>
+                            <option value="Franco">Franco</option>
+                            <option value="Peso">Peso</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <select multiple="" class="form-control">
+                            <option>Almerindo</option>
+                            <option>Rui Taveira</option>
+                            <option>Damásio Rodrigues</option>
+                            <option>Juliana Rabino</option>
+                            <option>Mahara Tabita</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Adicionar Grupo</button>
+                  </div>
+                  <!-- /.card-body -->
+                </div>
+              </div>
+            </div>
+
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+    </div>
+
+  </div>
+  <!-- ./wrapper -->
+</body>
