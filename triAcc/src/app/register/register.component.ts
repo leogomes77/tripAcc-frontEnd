@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { pipe } from 'rxjs';
 import { AuthService } from '../shared/api.service';
 
 @Component({
@@ -24,7 +25,9 @@ export class RegisterComponent implements OnInit {
   onSubmit(){
     const { email,name, password } = this.form;
     this.apiService.register(email,name,password).subscribe(
-      )
-      this.router.navigate(['/login'])
+        data => {console.log('success', data);this.router.navigate(['/login'])
+      },
+        error => { console.log('oops', error)  /*modal*/ }
+    )
   }
 }
