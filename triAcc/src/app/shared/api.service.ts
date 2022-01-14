@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const AUTH_API = 'http://localhost:3001/auth/';
 
 
 const httpOptions = {
@@ -17,8 +16,17 @@ export class AuthService {
 
   login(email: string, password: string): Observable<any> {
     return this.http.post('http://localhost:3001/auth/signin' , {
-      email: "ola@ipca.pt",password:"ola123"
+      email,
+      password
     }, httpOptions);
+  }
+
+  register(email: string, name:string, password: string): Observable<any> {
+    return this.http.post('http://localhost:3001/auth/signup' , {
+      email,
+      name,
+      password
+    }, httpOptions );
   }
 
   /*getGroups(){

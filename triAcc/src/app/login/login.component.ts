@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     password: null
   };
 
-  constructor(public apiService: AuthService, private tokenStorage: TokenStorageService ) { }
+  constructor(public apiService: AuthService,private router: Router, private tokenStorage: TokenStorageService ) { }
 
   ApiLogin : any;
 
@@ -31,7 +31,16 @@ export class LoginComponent implements OnInit {
       this.apiService.login(email,password).subscribe(
         (      data: { token: any; }) => {
           this.tokenStorage.saveToken(data.token);
+          if(data.token == null)
+          {
+            this.router.navigate(['/login'])
+          }
+          else{
+            this.router.navigate(['/dashboard'])
+          }
         }
       )
     }
+
+   
 }
