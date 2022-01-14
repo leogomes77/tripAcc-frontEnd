@@ -1,7 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { AuthService } from '../shared/api.service';
 
 @Component({
   selector: 'app-register',
@@ -10,9 +10,21 @@ import { catchError, map } from 'rxjs/operators';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  form: any = {
+    email: null,
+    name:null,
+    password: null
+  };
+
+  constructor(public apiService: AuthService,private router: Router,) { }
 
   ngOnInit(): void {
   }
 
+  onSubmit(){
+    const { email,name, password } = this.form;
+    this.apiService.register(email,name,password).subscribe(
+      )
+      this.router.navigate(['/login'])
+  }
 }
