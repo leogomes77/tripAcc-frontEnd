@@ -16,7 +16,8 @@ import { GroupComponent } from './group/group.component';
 import { UserComponent } from './user/user.component';
 import { GroupCreateComponent } from './group-create/group-create.component';
 import { NgForm } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [

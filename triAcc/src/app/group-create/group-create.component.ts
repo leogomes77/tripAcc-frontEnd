@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../shared/api.service';
 
 @Component({
   selector: 'app-group-create',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GroupCreateComponent implements OnInit {
 
-  constructor() { }
+  form: any = {
+    name: null,
+    descricao: null,
+    moeda: null
+  };
+
+  constructor(public apiService: AuthService,private router: Router) { }
 
   ngOnInit(): void {
     this.verificaDarkmode();
@@ -22,6 +30,15 @@ export class GroupCreateComponent implements OnInit {
     }else{
       this.normalMode();
     }
+  }
+
+  onCreateGroup(){
+    const { name,descricao, moeda } = this.form;
+    this.apiService.group(name,descricao,moeda).subscribe(
+        data => {console.log('success', data);this.router.navigate(['/login'])
+      },
+        error => { console.log('oops', error)  /*modal*/ }
+    )
   }
 
   darkMode(){
