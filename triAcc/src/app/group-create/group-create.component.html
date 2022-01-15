@@ -128,20 +128,20 @@
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Nome">
+                          <input type="text" class="form-control" placeholder="Nome" name="name" [(ngModel)]="form.name" #name="ngModel" required>
                         </div>
                       </div>
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Descrição">
+                          <input type="text" class="form-control" placeholder="Descrição" name="descricao" [(ngModel)]="form.descricao"  #descricao="ngModel" required>
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <select class="form-control">
-                            <option value="" disabled selected>Moeda</option>
+                          <select class="form-control" name="moeda" [(ngModel)]="form.moeda"  #moeda="ngModel">
+                            <option value="" disabled selected >Moeda</option>
                             <option value="Euro">Euro</option>
                             <option value="Dollar">Dollar</option>
                             <option value="Libra">Libra</option>
@@ -164,7 +164,7 @@
                       </div>
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-primary" >Adicionar Grupo</button>
+                    <button type="submit" class="btn btn-primary" (click)="onCreateGroup()" >Adicionar Grupo</button>
                   </div>
                   <!-- /.card-body -->
                 </div>
