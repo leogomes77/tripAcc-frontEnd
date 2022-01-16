@@ -35,7 +35,7 @@ export class GroupCreateComponent implements OnInit {
   onCreateGroup(){
     const { name,descricao, moeda } = this.form;
     this.apiService.group(name,descricao,moeda).subscribe(
-        data => {console.log('success', data);this.router.navigate(['/login'])
+        data => {console.log('success', data);this.router.navigate(['/group'])
       },
         error => { console.log('oops', error)  /*modal*/ }
     )

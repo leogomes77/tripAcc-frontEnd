@@ -127,7 +127,7 @@
                   </div>
                 </div>
                 <!-- /.card-header -->
-                <div class="card-body table-responsive p-0" style="height: 300px;">
+                <div class="card-body table-responsive p-0" style="height: 700px;">
                   <table class="table table-head-fixed text-nowrap">
                     <thead>
                       <tr>
@@ -135,44 +135,18 @@
                         <th>Nome Grupo</th>
                         <th>Descrição</th>
                         <th>Estado</th>
-                        <th>Ação</th>
+                        <th style="width: 300px;">Ação</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>183</td>
-                        <td>Férias Natal</td>
-                        <td>Nunc non leo non orci.</td>
-                        <td>Ativo</td>
-                        <td><button type="button" class="btn btn-block btn-success btn-xs">Abrir</button></td>
-                      </tr>
-                      <tr>
-                        <td>219</td>
-                        <td>Viagem</td>
-                        <td>Cras vitae imperdiet mauris, id.</td>
-                        <td>Encerrado</td>
-                        <td><button type="button" class="btn btn-block btn-success btn-xs">Abrir</button></td>
-                      </tr>
-                      <tr>
-                        <td>657</td>
-                        <td>Verão</td>
-                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                        <td>Encerrado</td>
-                        <td><button type="button" class="btn btn-block btn-success btn-xs">Abrir</button></td>
-                      </tr>
-                      <tr>
-                        <td>175</td>
-                        <td>Fim de semana</td>
-                        <td>Mauris viverra sagittis vulputate. Donec.</td>
-                        <td>Encerrado</td>
-                        <td><button type="button" class="btn btn-block btn-success btn-xs">Abrir</button></td>
-                      </tr>
-                      <tr>
-                        <td>134</td>
-                        <td>PenaAventura</td>
-                        <td>Morbi quis pellentesque lacus. Nulla.</td>
-                        <td>Encerrado</td>
-                        <td><button type="button" class="btn btn-block btn-success btn-xs">Abrir</button></td>
+                      <tr *ngFor="let g of grupo;">
+                        <td>{{ g.id }}</td>
+                        <td>{{ g.name }}</td>
+                        <td>{{ g.descricao }}</td>
+                        <td>{{ g.moeda }}</td>
+                        <td class="buttao"><button type="button" class="btn btn-success">Abrir</button>
+                          <button type="button" class="btn btn-warning">Editar</button>
+                            <button type="button" class="btn btn-danger" (click)="removeGroup(g.id)">Eliminar</button></td>
                       </tr>
                     </tbody>
                   </table>
