@@ -18,9 +18,7 @@ export class GroupComponent implements OnInit {
     moeda:null
   };
 
-  table: any = {
-    id : null,
-  };
+
 
 
 

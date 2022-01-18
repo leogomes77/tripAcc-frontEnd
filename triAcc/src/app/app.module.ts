@@ -17,6 +17,7 @@ import { UserComponent } from './user/user.component';
 import { GroupCreateComponent } from './group-create/group-create.component';
 import { NgForm } from '@angular/forms';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common
     DashboardComponent,
     GroupComponent,
     UserComponent,
-    GroupCreateComponent
+    GroupCreateComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,

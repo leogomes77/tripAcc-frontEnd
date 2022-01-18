@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserComponent } from './user/user.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+
 
 const routes: Routes = [
   {path: '',component: HomeComponent},
@@ -16,7 +18,8 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'group', component: GroupComponent},
   {path: 'groupCreate', component: GroupCreateComponent},
-  {path: 'user', component: UserComponent}
+  {path: 'user', component: UserComponent},
+  {path: '**' , component: NotfoundComponent}
 ];
 
 @NgModule({
