@@ -60,6 +60,16 @@ export class AuthService {
     
   }
 
+  getUserSettings(): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${this.tokenstorage.getToken()}`
+    })
+    const httpOptions = {headers:headers};
+    return this.http.get('http://localhost:3001/v1/users/info', httpOptions) ;
+    
+  }
+
   removegroup(id: number): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -67,6 +77,20 @@ export class AuthService {
     })
     const httpOptions = {headers:headers};
     return this.http.delete('http://localhost:3001/v1/groups/'+ id, httpOptions) ;
+    
+  }
+
+  editGroup(id: number,name: string, descricao:string, moeda: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${this.tokenstorage.getToken()}`
+    })
+    const httpOptions = {headers:headers};
+    return this.http.put('http://localhost:3001/v1/groups/'+ id ,{
+      name,
+      descricao,
+      moeda
+    }, httpOptions) ;
     
   }
 }

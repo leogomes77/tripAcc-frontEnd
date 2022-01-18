@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../shared/api.service';
+import { Router } from '@angular/router';
+import { User } from 'src/models/user.model';
 
 @Component({
   selector: 'app-user',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  constructor(public apiService: AuthService,private router: Router) { }
+
+  user : User[] | undefined;
+
 
   ngOnInit(): void {
+    this.onListUser();
     this.verificaDarkmode();
   }
 
@@ -47,5 +54,34 @@ export class UserComponent implements OnInit {
       this.normalMode();
     }
   }
+
+  onListUser(){
+    this.apiService.getUserSettings().subscribe(
+        data => {console.log('success', data);
+        return this.carregarUser(data);
+      },
+        error => { console.log('oops', error)  /*modal*/ }
+    )
+  }
+
+  carregarUser(user: User[] | undefined) {
+    this.user = user;
+  }
+
+  
+  converterUser(data: any) : User[] {
+    let UserResposta = data;
+    let user = [] ;
+
+    let i = 0;
+    for (i=0; i<UserResposta.length; i++) {
+      let id : number = UserResposta[i].id;
+      let name = UserResposta[i].name;
+      let email = UserResposta[i].email;
+      user.push(new User(id,name,email));
+    }
+    return user;
+  }
+
 
 }

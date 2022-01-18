@@ -11,6 +11,17 @@ import { Grupo } from 'src/models/grupo.model';
 })
 export class GroupComponent implements OnInit {
 
+  form: any = {
+    id : null,
+    nome: null,
+    descricao: null,
+    moeda:null
+  };
+
+  table: any = {
+    id : null,
+  };
+
 
 
   constructor(public apiService: AuthService,private router: Router) {
@@ -18,7 +29,7 @@ export class GroupComponent implements OnInit {
 
   grupo : Grupo[] | undefined;
 
-
+  id : any;
 
   ngOnInit(): void {
     this.verificaDarkmode();
@@ -57,14 +68,18 @@ export class GroupComponent implements OnInit {
   onListGroup(){
     this.apiService.getGroup().subscribe(
         data => {console.log('success', data);
-        return this.carregarImages(data);
+        return this.carregarGrupo(data);
       },
         error => { console.log('oops', error)  /*modal*/ }
     )
   }
 
-  carregarImages(grupo: Grupo[] | undefined) {
+  carregarGrupo(grupo: Grupo[] | undefined) {
     this.grupo = grupo;
+  }
+
+  getID(id : any){
+    this.id = id;
   }
 
   
@@ -81,6 +96,18 @@ export class GroupComponent implements OnInit {
       grupos.push(new Grupo(id,name,descricao, moeda));
     }
     return grupos;
+  }
+
+  
+  editGroup(){
+    const {nome,descricao,moeda } = this.form;
+    this.apiService.editGroup(this.id,nome,descricao,moeda).subscribe(
+        data => {console.log('success', data);
+        this.router.navigate(['/group'])
+        window.location.reload();
+      },
+        error => { console.log('oops', error)  /*modal*/ }
+    )
   }
 
 }
