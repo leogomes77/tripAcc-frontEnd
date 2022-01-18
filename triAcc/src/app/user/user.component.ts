@@ -66,6 +66,7 @@ export class UserComponent implements OnInit {
 
   carregarUser(user: User[] | undefined) {
     this.user = user;
+    console.log("User-",this.user);
   }
 
   
