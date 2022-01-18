@@ -145,7 +145,7 @@
                         <td>{{ g.descricao }}</td>
                         <td>{{ g.moeda }}</td>
                         <td class="buttao"><button type="button" class="btn btn-success">Abrir</button>
-                          <button type="button" class="btn btn-warning">Editar</button>
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter" (click)="getID(g.id)">Editar</button>
                             <button type="button" class="btn btn-danger" (click)="removeGroup(g.id)">Eliminar</button></td>
                       </tr>
                     </tbody>
@@ -164,3 +164,46 @@
   </div>
   <!-- ./wrapper -->
 </body>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Editar Grupo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Nome</label>
+            <input type="text" class="form-control" name="Nome" [(ngModel)]="form.nome"  #nome="ngModel" placeholder="Nome" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1" required>Descrição</label>
+            <input type="text" class="form-control" name="descricao" [(ngModel)]="form.descricao" required #descricao="ngModel" placeholder="Descrição">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1" required>Moeda</label>
+            <select class="form-control" name="moeda" [(ngModel)]="form.moeda"  #moeda="ngModel" placeholder="Moeda" required>
+              <option value="" disabled selected >Moeda</option>
+              <option value="Euro">Euro</option>
+              <option value="Dollar">Dollar</option>
+              <option value="Libra">Libra</option>
+              <option value="Real">Real</option>
+              <option value="Franco">Franco</option>
+              <option value="Peso">Peso</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" (click)="editGroup()">Editar</button>
+      </div>
+    </div>
+  </div>
+</div>
