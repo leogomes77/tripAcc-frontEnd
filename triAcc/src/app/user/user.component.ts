@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../shared/api.service';
 import { Router } from '@angular/router';
-import { User } from 'src/models/user.model';
 
 @Component({
   selector: 'app-user',
@@ -10,9 +9,17 @@ import { User } from 'src/models/user.model';
 })
 export class UserComponent implements OnInit {
 
+  form: any = {
+    nome: null,
+    email: null,
+    contacto:null
+  };
+
   constructor(public apiService: AuthService,private router: Router) { }
 
-  user : User[] | undefined;
+
+
+  user: any = '';
 
 
   ngOnInit(): void {
@@ -58,31 +65,13 @@ export class UserComponent implements OnInit {
   onListUser(){
     this.apiService.getUserSettings().subscribe(
         data => {console.log('success', data);
-        return this.carregarUser(data);
+        this.user = data;
+        return this.user;
       },
         error => { console.log('oops', error)  /*modal*/ }
     )
   }
 
-  carregarUser(user: User[] | undefined) {
-    this.user = user;
-    console.log("User-",this.user);
-  }
-
-  
-  converterUser(data: any) : User[] {
-    let UserResposta = data;
-    let user = [] ;
-
-    let i = 0;
-    for (i=0; i<UserResposta.length; i++) {
-      let id : number = UserResposta[i].id;
-      let name = UserResposta[i].name;
-      let email = UserResposta[i].email;
-      user.push(new User(id,name,email));
-    }
-    return user;
-  }
-
+ 
 
 }

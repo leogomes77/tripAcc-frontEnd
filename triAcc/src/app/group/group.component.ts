@@ -29,6 +29,8 @@ export class GroupComponent implements OnInit {
 
   id : any;
 
+  groupedit: any = '';
+
   ngOnInit(): void {
     this.verificaDarkmode();
     this.onListGroup();
@@ -78,6 +80,16 @@ export class GroupComponent implements OnInit {
 
   getID(id : any){
     this.id = id;
+  }
+
+  getGroup(){
+    this.apiService.getSpecGroup(this.id).subscribe(
+      data => {console.log('success', data);
+      this.groupedit = data;
+      return this.groupedit;
+    },
+      error => { console.log('oops', error)  /*modal*/ }
+  )
   }
 
   
