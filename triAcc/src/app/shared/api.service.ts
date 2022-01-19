@@ -60,6 +60,16 @@ export class AuthService {
     
   }
 
+  getSpecGroup(id: number): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${this.tokenstorage.getToken()}`
+    })
+    const httpOptions = {headers:headers};
+    return this.http.get('http://localhost:3001/v1/groups/' + id, httpOptions) ;
+    
+  }
+
   getUserSettings(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',

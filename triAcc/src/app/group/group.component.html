@@ -145,7 +145,7 @@
                         <td>{{ g.descricao }}</td>
                         <td>{{ g.moeda }}</td>
                         <td class="buttao"><button type="button" class="btn btn-success">Abrir</button>
-                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter" (click)="getID(g.id)">Editar</button>
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter" (click)="getID(g.id)"  (click)="getGroup()">Editar</button>
                             <button type="button" class="btn btn-danger" (click)="removeGroup(g.id)">Eliminar</button></td>
                       </tr>
                     </tbody>
@@ -180,15 +180,15 @@
         <form>
           <div class="form-group">
             <label for="exampleInputEmail1">Nome</label>
-            <input type="text" class="form-control" name="Nome" [(ngModel)]="form.nome"  #nome="ngModel" placeholder="Nome" required>
+            <input type="text" class="form-control" name="Nome" [(ngModel)]="form.nome" value="{{ groupedit?.name }}"  #nome="ngModel" placeholder="Nome" required>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1" required>Descrição</label>
-            <input type="text" class="form-control" name="descricao" [(ngModel)]="form.descricao" required #descricao="ngModel" placeholder="Descrição">
+            <input type="text" class="form-control" name="descricao" [(ngModel)]="form.descricao" value="{{ groupedit?.descricao }}" required #descricao="ngModel" placeholder="Descrição">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1" required>Moeda</label>
-            <select class="form-control" name="moeda" [(ngModel)]="form.moeda"  #moeda="ngModel" placeholder="Moeda" required>
+            <select class="form-control" name="moeda" [(ngModel)]="form.moeda" value="{{ groupedit?.moeda }}"  #moeda="ngModel" placeholder="Moeda" required>
               <option value="" disabled selected >Moeda</option>
               <option value="Euro">Euro</option>
               <option value="Dollar">Dollar</option>
